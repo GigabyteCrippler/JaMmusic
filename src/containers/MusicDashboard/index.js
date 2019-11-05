@@ -44,7 +44,8 @@ export class MusicDashboard extends Component {
     const {
       date, time, location, venue,
     } = this.state;
-  return (date && time && location && venue && date !== '')? false:true;
+    if (date && time && location && venue && date !== '') return false;
+    return true;
   }
 
   createTourApi(tour1) { // eslint-disable-line class-methods-use-this
