@@ -47,8 +47,7 @@ export class App extends Component {
               {auth.isAuthenticated && auth.user.userType === 'Developer'
                 ? <Route path="/music/dashboard" component={DefaultMusicDashboard} /> : null}
                 
-                
-                <Route path="/music/dashboard" component={DefaultMusicDashboard} /> 
+              <Route path="/music/dashboard" component={DefaultMusicDashboard} /> 
               <Route path="/shop" component={ShopMain} />
               <Route component={AppFourOhFour} />
             </Switch>

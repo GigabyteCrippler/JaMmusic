@@ -9,8 +9,8 @@ import EmersonBio from './emersonBio';
 import BrianBio from './brianBio';
 import Wjband from './wjBand';
 import Intro from './intro';
- import mapStoreToProps from '../../redux/mapStoreToProps';
- // import MusicDashboard from '../MusicDashboard/index'; 
+import mapStoreToProps from '../../redux/mapStoreToProps';
+// import MusicDashboard from '../MusicDashboard/index'; 
 
 export class Music extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ export class Music extends Component {
             position: 'relative', overflowX: 'auto', maxWidth: '96%', margin: 'auto',
           }}
         >
-        {/* <DefaultTable /> */}
+          {/* <DefaultTable /> */}
         </div>
         <div style={{ height: '10px' }}>
           <p>{' '}</p>

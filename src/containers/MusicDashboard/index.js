@@ -3,7 +3,7 @@ import moment from 'moment';
 import { withRouter, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import DateFnsUtils from "@date-io/date-fns";
+import DateFnsUtils from '@date-io/date-fns';
 import {
   DatePicker,
   MuiPickersUtilsProvider,
@@ -20,21 +20,22 @@ export class MusicDashboard extends Component {
       time: '',
       tickets: '',
       more: '',
-      selectedDate: new Date()
+      selectedDate: new Date(),
     };
     this.onChange = this.onChange.bind(this);
     this.createTour = this.createTour.bind(this);
     this.validateForm = this.validateForm.bind(this);
     this.createTourApi = this.createTourApi.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this)
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
   componentDidMount() { document.title = 'Music Dashboard | Web Jam LLC'; }
 
   handleDateChange(e) {
-    this.setState({ selectedDate: e })
-    console.log(e)
+    this.setState({ selectedDate: e });
+    console.log(e);
   }
+
   onChange(evt) {
     evt.preventDefault();
     this.setState({ [evt.target.id]: evt.target.value });
@@ -91,8 +92,8 @@ export class MusicDashboard extends Component {
         {this.makeInput('text', 'location', true, this.onChange, location)}
         {this.makeInput('text', 'tickets', false, this.onChange, tickets)}
         {this.makeInput('text', 'more', false, this.onChange, more)}
-        <div  className = "divStyle">
-          <MuiPickersUtilsProvider utils={DateFnsUtils} >
+        <div className="divStyle">
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardTimePicker
               id="time-picker"
               label="Time picker"
@@ -110,13 +111,12 @@ export class MusicDashboard extends Component {
     );
   }
 
-
   render() {
     const {
       date, time, buttonStyle, redirect,
     } = this.state;
     return (
-      <div className="page-content" >
+      <div className="page-content">
         {redirect ? <Redirect to="/music" /> : null}
         <h3 style={{ textAlign: 'center', margin: '14px', fontWeight: 'bold' }}>Music Dashboard</h3>
         <h5 style={{ textAlign: 'center', marginBottom: 0 }}>Create a New Tour</h5>
